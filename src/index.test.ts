@@ -1,5 +1,6 @@
 import { expect, describe, it } from "vitest";
 import { buildIdealObject, getDeepKeys, sumDeepKeys } from "./index";
+import example from "../example/example.json";
 
 describe("estimate-schema", () => {
   it("returns a list of string keys when calling getDeepKeys()", () => {
@@ -57,67 +58,8 @@ describe("estimate-schema", () => {
   });
 
   // note: 10 objects in array, below, to make understanding freq percentages easier 🤓
-  const someKindaSimilarObjects = [
-    {
-      foo: "bar",
-      baz: "beep",
-      deepObj: {
-        also: "has propz!",
-        and: "other stuff!",
-      },
-    },
-    {
-      foo: "oof",
-      baz: "zab",
-      deepObj: {
-        also: "has stuff!",
-        and: "suffy stuff!",
-      },
-    },
-    {
-      foo: "gnar",
-      baz: "honk",
-      deepObj: {
-        also: "zee stuff",
-        and: "other goodiez",
-        but: "also more propz!",
-      },
-      whee: [1, 2, 3],
-    },
-    {
-      foo: "foo!",
-      baz: "baz!",
-      whee: [4, 5, 6],
-    },
-    {
-      foo: "wha",
-      baz: "zee",
-      whee: ["hey", "its", "a string"],
-    },
-    {
-      foo: "bun",
-      baz: "gulp",
-      whee: [-1, -2, -3],
-      ohey: "im new!",
-    },
-    {
-      foo: "another foo",
-      ohey: "it just these two",
-      whee: [11, 22, 33],
-    },
-    {
-      foo: "and this just foo ",
-    },
-    {
-      foo: "random foo",
-      baz: null,
-      just_a_random_one: 1,
-    },
-    {
-      foo: "foo sooo lonely :/",
-      and_some_other_lonely_prop: 10,
-    },
-  ];
+  const someKindaSimilarObjects = example;
+
   it("returns information about key frequencies when calling sumDeepKeysOut()", () => {
     const sumDeepKeysOut = sumDeepKeys(someKindaSimilarObjects);
 

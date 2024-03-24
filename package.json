@@ -2,15 +2,18 @@
   "name": "estimate-schema",
   "version": "0.0.1",
   "description": "a cli utility for generating data schema estimates with a bunch of input data, useful for zod or other schema validation library.",
-  "main": "index.cjs",
+  "author": "3dwardsharp",
+  "license": "GPL-3.0-or-later",
+  "main": "src/index.ts",
+  "bin": "dist/cli.cjs",
   "scripts": {
+    "build": "esbuild src/cli.ts --bundle --platform=node --outfile=dist/cli.cjs",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
-  "author": "3dwardsharp",
-  "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@types/node": "20.11.30",
+    "esbuild": "0.20.2",
     "lodash": "4.17.21",
     "typescript": "^5.2.2",
     "vitest": "^1.4.0"
