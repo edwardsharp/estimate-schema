@@ -4,6 +4,7 @@
   "description": "a cli utility for generating data schema estimates with a bunch of input data, useful for zod or other schema validation library.",
   "author": "3dwardsharp",
   "license": "GPL-3.0-or-later",
+  "repository": "github:edwardsharp/estimate-schema",
   "main": "src/index.ts",
   "bin": "dist/cli.cjs",
   "scripts": {
